@@ -504,3 +504,24 @@
 .copyright a:hover {
     color: #FFFFFF !important;
 }
+
+p {
+    display: block !important ;
+    margin-block-start: 1em  !important; 
+    margin-block-end: 1em  !important ;
+    margin-inline-start: 0px  !important ;
+    margin-inline-end: 0px  !important;
+    unicode-bidi: isolate  !important ;
+}
+.navbar .navbar-brand {
+    position: absolute;
+    padding: 0;
+    width: 150px;
+    height: 150px;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    background: white;
+    padding: 10px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .1);
+}
