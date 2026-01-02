@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rice Gallery - Dhaanya</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0B3D2E',
+                        secondary: '#D4AF37',
+                        background: '#FCFBF7',
+                        'primary-foreground': '#FFFFFF',
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        paragraph: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .filter-btn.active {
+            background-color: #0B3D2E;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-background min-h-screen font-paragraph">
+
+    <section class="relative w-full max-w-[120rem] mx-auto min-h-[400px] overflow-hidden rounded-b-[3rem] mb-16">
+        <div class="absolute inset-0">
+            <img src="https://static.wixstatic.com/media/ca2489_32e5a5e76a00432da369850562141c1b~mv2.png?originWidth=1920&originHeight=384" 
+                 alt="Rice gallery" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-primary/60"></div>
+        </div>
+
+        <div class="relative z-10 max-w-[120rem] mx-auto px-6 py-24 text-center">
+            <h1 class="reveal font-heading text-5xl md:text-6xl font-bold text-white">
+                Rice Gallery
+            </h1>
+            <p class="reveal text-lg text-white/90 mt-4 max-w-3xl mx-auto" style="transition-delay: 200ms;">
+                Explore the beauty of rice cultivation, varieties, and culinary creations.
+            </p>
+        </div>
+    </section>
+
+    <section class="max-w-[120rem] mx-auto px-6 mb-12">
+        <div id="filter-container" class="flex flex-wrap justify-center gap-3">
+            <button onclick="filterGallery('all')" class="filter-btn active px-6 py-3 rounded-full bg-secondary/30 text-primary font-medium transition-all hover:bg-secondary/50">All</button>
+            <button onclick="filterGallery('cultivation')" class="filter-btn px-6 py-3 rounded-full bg-secondary/30 text-primary font-medium transition-all hover:bg-secondary/50">Cultivation</button>
+            <button onclick="filterGallery('varieties')" class="filter-btn px-6 py-3 rounded-full bg-secondary/30 text-primary font-medium transition-all hover:bg-secondary/50">Varieties</button>
+            <button onclick="filterGallery('culinary')" class="filter-btn px-6 py-3 rounded-full bg-secondary/30 text-primary font-medium transition-all hover:bg-secondary/50">Culinary</button>
+        </div>
+    </section>
+
+    <section class="max-w-[120rem] mx-auto px-6 pb-24">
+        <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            </div>
+    </section>
+
+    <section class="max-w-[120rem] mx-auto px-6 py-16 mb-24 border-t border-primary/10">
+        <div class="text-center mb-12">
+            <h2 class="font-heading text-4xl md:text-5xl font-bold text-primary mb-4">Rice in British Cuisine</h2>
+            <p class="text-lg text-primary/70 max-w-2xl mx-auto">Discover how rice has become an integral part of beloved UK dishes.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="reveal bg-secondary/10 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow">
+                <img src="https://static.wixstatic.com/media/ca2489_7eff2ac5c002414fb14c00f27496d5b1~mv2.png" alt="Biryani" class="h-64 w-full object-cover">
+                <div class="p-6">
+                    <h3 class="font-heading text-2xl font-semibold text-primary mb-3">British Indian Biryani</h3>
+                    <p class="text-primary/70">A UK favorite combining fragrant basmati rice with aromatic spices and tender meat.</p>
+                </div>
+            </div>
+            <div class="reveal bg-secondary/10 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow" style="transition-delay: 100ms;">
+                <img src="https://static.wixstatic.com/media/ca2489_1e495eca59a04ea38c708cd5d7a4accb~mv2.png" alt="Pudding" class="h-64 w-full object-cover">
+                <div class="p-6">
+                    <h3 class="font-heading text-2xl font-semibold text-primary mb-3">Traditional Rice Pudding</h3>
+                    <p class="text-primary/70">A classic British comfort dessert made with creamy rice, milk, and sugar.</p>
+                </div>
+            </div>
+            <div class="reveal bg-secondary/10 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow" style="transition-delay: 200ms;">
+                <img src="https://static.wixstatic.com/media/ca2489_aebe81d412bb45358cef8350551289a7~mv2.png" alt="Pilau" class="h-64 w-full object-cover">
+                <div class="p-6">
+                    <h3 class="font-heading text-2xl font-semibold text-primary mb-3">Pilau Rice</h3>
+                    <p class="text-primary/70">Fragrant basmati cooked with whole spices, a staple in British curry houses.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Mock Data to replace the BaseCrudService
+        const imageData = [
+            { id: 1, category: 'cultivation', title: 'Himalayan Fields', desc: 'Sourced from the foothills of Northern India.', date: '2025-10-12', img: 'https://static.wixstatic.com/media/12d367_71ebdd7141d041e4be3d91d80d4578dd~mv2.png' },
+            { id: 2, category: 'varieties', title: 'Aged Basmati', desc: 'Extra-long grains with a signature nutty aroma.', date: '2025-11-05', img: 'https://static.wixstatic.com/media/12d367_71ebdd7141d041e4be3d91d80d4578dd~mv2.png' },
+            { id: 3, category: 'culinary', title: 'Saffron Infusion', desc: 'Premium rice used in high-end culinary plating.', date: '2026-01-02', img: 'https://static.wixstatic.com/media/12d367_71ebdd7141d041e4be3d91d80d4578dd~mv2.png' },
+            { id: 4, category: 'cultivation', title: 'Traditional Harvest', desc: 'The manual harvesting process preserves grain quality.', date: '2025-09-20', img: 'https://static.wixstatic.com/media/12d367_71ebdd7141d041e4be3d91d80d4578dd~mv2.png' }
+        ];
+
+        const grid = document.getElementById('gallery-grid');
+
+        function renderGallery(filter = 'all') {
+            grid.innerHTML = '';
+            const filtered = filter === 'all' ? imageData : imageData.filter(img => img.category === filter);
+            
+            filtered.forEach((item, index) => {
+                const card = `
+                    <div class="reveal is-visible group relative bg-white rounded-2xl overflow-hidden border border-primary/10 hover:border-primary/30 transition-all shadow-sm">
+                        <div class="relative h-80 overflow-hidden">
+                            <img src="${item.img}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-4 left-4">
+                                <span class="px-3 py-1 bg-primary text-white text-xs rounded-full uppercase tracking-widest font-bold">${item.category}</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading text-xl font-semibold text-primary mb-2">${item.title}</h3>
+                            <p class="text-sm text-primary/70 mb-3">${item.desc}</p>
+                            <p class="text-xs text-primary/50">${new Date(item.date).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += card;
+            });
+        }
+
+        function filterGallery(category) {
+            // Update buttons
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.innerText.toLowerCase() === category) btn.classList.add('active');
+            });
+            renderGallery(category);
+        }
+
+        // Initialize
+        renderGallery();
+
+        // Reveal Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('is-visible');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

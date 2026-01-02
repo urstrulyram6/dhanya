@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Story of Rice - Dhaanya</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0B3D2E',
+                        secondary: '#D4AF37',
+                        background: '#FCFBF7',
+                        'primary-foreground': '#FFFFFF',
+                        'secondary-foreground': '#0B3D2E',
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        paragraph: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-background font-paragraph">
+
+    <section class="relative w-full max-w-[120rem] mx-auto min-h-[400px] overflow-hidden rounded-b-[3rem] mb-16">
+        <div class="absolute inset-0">
+            <img src="https://static.wixstatic.com/media/ca2489_3f3d774f6dc84528b8a4c6f67cda85df~mv2.png?originWidth=1920&originHeight=384" 
+                 alt="Rice fields" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-primary/60"></div>
+        </div>
+
+        <div class="relative z-10 max-w-[120rem] mx-auto px-6 py-24 text-center">
+            <h1 class="reveal font-heading text-5xl md:text-6xl font-bold text-white">The Story of Rice</h1>
+            <p class="reveal text-lg text-white/90 mt-4 max-w-3xl mx-auto" style="transition-delay: 200ms;">
+                Discover the rich heritage, nutritional benefits, and cultivation journey of one of the world's most important grains.
+            </p>
+        </div>
+    </section>
+
+    <section class="max-w-[120rem] mx-auto px-6 py-16">
+        <div class="text-center mb-12">
+            <h2 class="reveal font-heading text-4xl md:text-5xl font-bold text-primary mb-4">Health Benefits of Rice</h2>
+            <p class="reveal text-lg text-primary/70 max-w-2xl mx-auto">Rice is more than sustenance—it's a nutritional powerhouse.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="reveal bg-secondary/20 rounded-2xl p-8 text-center">
+                <div class="w-14 h-14 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="zap" class="w-7 h-7 text-white"></i>
+                </div>
+                <h3 class="font-heading text-xl font-semibold text-primary mb-3">Energy Source</h3>
+                <p class="text-sm text-primary/70">Rich in carbohydrates, rice provides sustained energy for daily activities and athletic performance.</p>
+            </div>
+            <div class="reveal bg-secondary/20 rounded-2xl p-8 text-center" style="transition-delay: 100ms;">
+                <div class="w-14 h-14 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="heart" class="w-7 h-7 text-white"></i>
+                </div>
+                <h3 class="font-heading text-xl font-semibold text-primary mb-3">Heart Health</h3>
+                <p class="text-sm text-primary/70">Brown rice contains fiber and nutrients that support cardiovascular health and cholesterol management.</p>
+            </div>
+            <div class="reveal bg-secondary/20 rounded-2xl p-8 text-center" style="transition-delay: 200ms;">
+                <div class="w-14 h-14 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="droplet" class="w-7 h-7 text-white"></i>
+                </div>
+                <h3 class="font-heading text-xl font-semibold text-primary mb-3">Digestive Wellness</h3>
+                <p class="text-sm text-primary/70">Gentle on the stomach and naturally gluten-free, rice supports healthy digestion for all ages.</p>
+            </div>
+            <div class="reveal bg-secondary/20 rounded-2xl p-8 text-center" style="transition-delay: 300ms;">
+                <div class="w-14 h-14 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="brain" class="w-7 h-7 text-white"></i>
+                </div>
+                <h3 class="font-heading text-xl font-semibold text-primary mb-3">Essential Nutrients</h3>
+                <p class="text-sm text-primary/70">Contains B vitamins, iron, and minerals essential for brain function and overall vitality.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-[120rem] mx-auto px-6 py-16 space-y-24">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="reveal">
+                <h2 class="font-heading text-4xl md:text-5xl font-bold text-primary mb-6">
+                    Rice <span class="italic font-normal">Production</span>
+                </h2>
+                <p class="text-lg text-primary/70 mb-4">Rice cultivation is an ancient art perfected over millennia. The process begins with careful seed selection and land preparation, followed by flooding of paddy fields to create ideal growing conditions.</p>
+                <p class="text-lg text-primary/70 mb-4">Indian farmers employ both traditional and modern techniques, nurturing rice plants through monsoon seasons. The flooded fields not only provide water but also control weeds and pests naturally.</p>
+            </div>
+            <div class="reveal rounded-3xl overflow-hidden shadow-xl" style="transition-delay: 200ms;">
+                <img src="https://static.wixstatic.com/media/ca2489_6fd9b3827de4492694ced8a51a06b379~mv2.png" alt="Fields" class="w-full h-[450px] object-cover">
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="reveal rounded-3xl overflow-hidden shadow-xl order-2 lg:order-1">
+                <img src="https://static.wixstatic.com/media/ca2489_0f16609f6e52477bbfd3153133f4fbd1~mv2.png" alt="Facility" class="w-full h-[450px] object-cover">
+            </div>
+            <div class="reveal order-1 lg:order-2">
+                <h2 class="font-heading text-4xl md:text-5xl font-bold text-primary mb-6">
+                    Rice <span class="italic font-normal">Processing</span>
+                </h2>
+                <p class="text-lg text-primary/70 mb-4">After harvest, rice undergoes meticulous processing. The journey begins with drying to reduce moisture content, ensuring long-term storage quality.</p>
+                <p class="text-lg text-primary/70">Milling removes the outer husk and bran layers. For white rice, both are removed; brown rice retains the nutritious bran layer.</p>
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="knowledge-section" class="max-w-[120rem] mx-auto px-6 py-16 bg-primary/5 rounded-[3rem]">
+        <div class="text-center mb-12">
+            <h2 class="font-heading text-4xl md:text-5xl font-bold text-primary mb-4">Rice Knowledge Center</h2>
+            <p class="text-lg text-primary/70 max-w-2xl mx-auto">Explore detailed insights about different rice varieties.</p>
+        </div>
+        <div id="knowledge-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            </div>
+    </section>
+
+    <section class="max-w-[120rem] mx-auto px-6 py-24">
+        <div class="text-center mb-12">
+            <h2 class="font-heading text-4xl md:text-5xl font-bold text-primary mb-4">Types of Rice</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="reveal bg-secondary/10 p-8 rounded-3xl border border-secondary/20">
+                <h3 class="font-heading text-2xl font-semibold text-primary mb-4">Basmati Rice</h3>
+                <p class="text-primary/70 mb-4">Known for its distinctive aroma and long grains. Perfect for biryanis and pilafs.</p>
+                <ul class="space-y-2 text-sm text-primary/60">
+                    <li>• Aromatic fragrance</li>
+                    <li>• Fluffy texture</li>
+                    <li>• Low glycemic index</li>
+                </ul>
+            </div>
+            <div class="reveal bg-secondary/10 p-8 rounded-3xl border border-secondary/20" style="transition-delay: 100ms;">
+                <h3 class="font-heading text-2xl font-semibold text-primary mb-4">Steam Rice</h3>
+                <p class="text-primary/70 mb-4">Parboiled rice that retains more nutrients. Ideal for everyday firm meals.</p>
+                <ul class="space-y-2 text-sm text-primary/60">
+                    <li>• Enhanced nutrition</li>
+                    <li>• Separate grains</li>
+                    <li>• Quick cooking</li>
+                </ul>
+            </div>
+            <div class="reveal bg-secondary/10 p-8 rounded-3xl border border-secondary/20" style="transition-delay: 200ms;">
+                <h3 class="font-heading text-2xl font-semibold text-primary mb-4">Brown Rice</h3>
+                <p class="text-primary/70 mb-4">Whole grain rice with bran layer intact. Superior nutritional value and fiber.</p>
+                <ul class="space-y-2 text-sm text-primary/60">
+                    <li>• High fiber content</li>
+                    <li>• Nutty flavor</li>
+                    <li>• Whole grain benefits</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mock Data for Knowledge Center
+        const knowledgeData = [
+            { id: 1, title: 'Basmati Secrets', category: 'Variety', summary: 'Why Himalayan soil matters.', content: 'The unique mineral content of the soil near the Himalayas gives Basmati its signature scent...', img: 'https://static.wixstatic.com/media/ca2489_aebe81d412bb45358cef8350551289a7~mv2.png' },
+            { id: 2, title: 'Storage Tips', category: 'Guide', summary: 'Keeping grains fresh.', content: 'Store rice in a cool, dry place in airtight containers to prevent moisture and pests...', img: 'https://static.wixstatic.com/media/ca2489_7eff2ac5c002414fb14c00f27496d5b1~mv2.png' },
+            { id: 3, title: 'Nutritional Facts', category: 'Health', summary: 'White vs Brown.', content: 'While white rice is easier to digest, brown rice offers more B-vitamins and magnesium...', img: 'https://static.wixstatic.com/media/ca2489_1e495eca59a04ea38c708cd5d7a4accb~mv2.png' }
+        ];
+
+        const knowledgeGrid = document.getElementById('knowledge-grid');
+        knowledgeData.forEach(info => {
+            knowledgeGrid.innerHTML += `
+                <div class="reveal bg-white rounded-2xl overflow-hidden border border-primary/10 hover:border-secondary/50 transition-all shadow-sm">
+                    <img src="${info.img}" class="h-48 w-full object-cover">
+                    <div class="p-6">
+                        <span class="inline-block px-3 py-1 bg-secondary text-primary font-bold text-[10px] rounded-full mb-3 uppercase tracking-wider">${info.category}</span>
+                        <h3 class="font-heading text-xl font-semibold text-primary mb-3">${info.title}</h3>
+                        <p class="text-sm text-primary/70 mb-4">${info.summary}</p>
+                        <p class="text-sm text-primary/60 line-clamp-3">${info.content}</p>
+                    </div>
+                </div>
+            `;
+        });
+
+        // Scroll Reveal Logic
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
